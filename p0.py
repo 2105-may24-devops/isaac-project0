@@ -5,9 +5,14 @@ import writer
 try:
     from blessed import Terminal
     term = Terminal()
+    blessed_found = True
 except ModuleNotFoundError:
-    term.aqua = ''
-    term.normal = ''
+    class Terminal:
+        def __init__(self):
+            self.aqua = ''
+            self.normal = ''
+    term = Terminal()
+    blessed_found = False
 
 help_text = '''usage: python py0.py [output | -h] [-f file | -x file | -i | -c] [args]
 
