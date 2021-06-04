@@ -1,6 +1,5 @@
-
 def write_css(path, css):
-    '''Writes a .css file from the output of reader.construct()
+    '''Writes a .css file at path from the dictionary css.
     
     ---
     path:
