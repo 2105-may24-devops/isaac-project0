@@ -1,0 +1,9 @@
+# /venv/Scripts/*.exe
+# *.exe
+# every .exe in any bin folder
+# bin/*.exe
+
+
+
+venv/
+__pycache__/
