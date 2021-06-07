@@ -1,0 +1,11 @@
+---
+# Cloning the isaac-project0
+
+- name: Clone isaac-project0
+  hosts: all
+  tasks:
+    - name: git clone
+      ansible.builtin.git:
+        dest: ~/repos/isaac-project0
+        repo: 'https://github.com/2105-may24-devops/isaac-project0.git'
+
