@@ -2,6 +2,7 @@
 # These tasks install and update python3 and git
 - name: Install python3 and git
   hosts: all
+  become: yes
   tasks:
     - name: Install git
       ansible.builtin.package:
