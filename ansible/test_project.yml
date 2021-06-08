@@ -1,0 +1,14 @@
+---
+- name: Run test suite
+  hosts: all
+  tasks:
+    - name: Perform tests
+      ansible.builtin.script:
+        cmd: tests.sh
+        chdir: /home/isaac/repos/isaac-project0
+      register: test_result
+
+    - name: Test info
+      ansible.builtin.debug:
+        var: test_result.stdout_lines
+
