@@ -1,0 +1,11 @@
+---
+# This task uninstalls isaac-project0
+
+- name: Uninstall
+  hosts: all
+  become: yes
+  tasks:
+    - name: Remove project folder
+      ansible.builtin.script:
+        cmd: uninstall.sh
+        chdir: /home/isaac/repos
