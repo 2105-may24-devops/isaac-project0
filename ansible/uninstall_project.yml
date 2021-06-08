@@ -8,4 +8,5 @@
     - name: Remove project folder
       ansible.builtin.script:
         cmd: uninstall.sh
-        chdir: /home/isaac/repos
+        chdir: '{{ install_path }}'
+        removes: '{{ install_path }}/isaac-project0/p0.py'
