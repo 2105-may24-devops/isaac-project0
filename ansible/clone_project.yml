@@ -6,6 +6,6 @@
   tasks:
     - name: git clone
       ansible.builtin.git:
-        dest: ~/repos/isaac-project0
+        dest: '{{ install_path }}/isaac-project0'
         repo: 'https://github.com/2105-may24-devops/isaac-project0.git'
 

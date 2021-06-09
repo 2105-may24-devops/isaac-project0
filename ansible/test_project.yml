@@ -5,7 +5,7 @@
     - name: Perform tests
       ansible.builtin.script:
         cmd: tests.sh
-        chdir: /home/isaac/repos/isaac-project0
+        chdir: '{{ install_path }}/isaac-project0'
       register: test_result
 
     - name: Test info
