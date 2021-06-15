@@ -10,5 +10,5 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: bash ./tests.sh
+- script: bash ansible/tests.sh
   displayName: 'Run simple tests'
