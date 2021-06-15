@@ -10,5 +10,5 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: ./tests.sh
+- script: bash ./tests.sh
   displayName: 'Run simple tests'
