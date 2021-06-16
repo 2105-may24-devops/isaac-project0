@@ -26,3 +26,21 @@ steps:
       20.97.12.217 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFAZU4nQNS6lNWqiFzoQ4pjTSmsGyxWmyoZS7pzSWooaua/yV9JDou49KuhCzZakpP/PY0WfTxbo/KrZM+ESW+Q=
       13.66.8.112 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBB8uiPgYsAfhZo9tzfam2hbv7G1TUF4hk0jzrxO/SjLO2qBpMrlDaQvQWYZI3kdNT1xgFHFKSXcyaPElszq3tqU=
       13.84.166.27 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBD/ijCrZ+LcL4gEv5Y0K7/h1/QNY85jbQGXZK6SNKSAIaO2HlZsirragLXPLeZrIHWqj8idSCGf8uaU16D1xwy4=
+    sshKeySecureFile: '2105-may24-devops-ubuntu-vm-1_key.pem'
+  displayName: 'Install SSH keys'
+
+- task: Ansible@0
+  inputs:
+    ansibleInterface: 'agentMachine'
+    playbookPathOnAgentMachine: 'ansible/install_python.yml'
+    inventoriesAgentMachine: 'file'
+    inventoryFileOnAgentMachine: 'ansible/inventory.yml'
+  displayName: 'Check installation'
+
+- task: Ansible@0
+  inputs:
+    ansibleInterface: 'agentMachine'
+    playbookPathOnAgentMachine: 'ansible/clone_project.yml'
+    inventoriesAgentMachine: 'file'
+    inventoryFileOnAgentMachine: 'ansible/inventory.yml'
+  displayName: 'Clone Project'
