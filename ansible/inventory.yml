@@ -14,4 +14,5 @@ all:
       ansible_user: isaac
   vars:
     install_path: /home/isaac/repos
+    ansible_python_interpreter: /usr/bin/python3
 
